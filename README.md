@@ -31,9 +31,9 @@ and sharing what I learn through **code and writing**.
 ## 💻 Programming Languages (Beginner)
 - **C++**
 - **Java**
-- **Python**
-- **HTML**
-- **CSS**
+- **Python** (Beginner)
+- **HTML** (Beginner)
+- **CSS** (Beginner)
 
 ---
 
@@ -53,8 +53,8 @@ and sharing what I learn through **code and writing**.
 
 ## 📊 GitHub Stats
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&count_private=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=yaaseminyavuz&show_icons=true&count_private=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yaaseminyavuz&layout=compact" />
 </p>
 
 ---
