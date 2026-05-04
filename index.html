@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yasemin Portfolio</title>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(120deg, #1e293b, #0f172a);
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 0;
+}
+
+.hero p {
+    color: #94a3b8;
+    font-size: 18px;
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    border-left: 4px solid #38bdf8;
+    padding-left: 10px;
+}
+
+/* SKILLS */
+.skill {
+    margin: 15px 0;
+}
+
+.bar {
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 10px;
+    background: #38bdf8;
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+/* PROJECTS */
+.project {
+    background: #1e293b;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.02);
+}
+
+/* FADE ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    padding: 60px;
+    background: #1e293b;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Yasemin Yavuz</h1>
+    <p>Engineering Student | Embedded Systems | R&D Enthusiast</p>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+    <h2>About Me</h2>
+    <p>
+        I am a first-year engineering student focused on embedded systems,
+        software development and simulation-based engineering projects.
+        I enjoy turning ideas into working systems.
+    </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="fade">
+    <h2>Skills</h2>
+
+    <div class="skill">
+        <p>C++</p>
+        <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>MATLAB</p>
+        <div class="bar"><div class="bar-fill" data-width="75%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Arduino</p>
+        <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Git & GitHub</p>
+        <div class="bar"><div class="bar-fill" data-width="70%"></div></div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>Arduino Scoreboard System</h3>
+        <p>Real-time scoring system using buttons and display integration.</p>
+    </div>
+
+    <div class="project">
+        <h3>MATLAB Earthquake Evacuation Simulation</h3>
+        <p>Agent-based modeling for optimized evacuation paths.</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact" class="contact fade">
+    <h2>Contact</h2>
+    <p>Email: yasemin@example.com</p>
+    <p>GitHub: github.com/yasemin</p>
+</div>
+
+<script>
+// SCROLL ANIMATION
+const elements = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
+
+// SKILL BAR ANIMATION
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".bar-fill").forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+            bar.style.width = bar.getAttribute("data-width");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
